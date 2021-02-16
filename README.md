@@ -14,8 +14,6 @@ cd models/research/object_detection/
 
 **Install models directory on to your root project folder**
 
-**OR**
-
 
 ```bash
 
