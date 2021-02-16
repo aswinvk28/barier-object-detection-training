@@ -1,5 +1,4 @@
-*.pyc
-dataset/*
-dataset
-dist
-image_search.egg-info
+models/
+*.egg-info
+build/
+dist/

@@ -1,50 +1,76 @@
+## Barrier / Gate Detection
 
-## Bing Image Downloader
-<hr>
+### Training
 
-Python library to download bulk of images form Bing.com.
-This package uses async url, which makes it very fast while downloading.<br/>
+Clone the research models repository of tensorflow
 
-
-### Disclaimer<br />
-
-This program lets you download tons of images from Bing.
-Please do not download or use any image that violates its copyright terms. 
-
-### Installation <br />
-```sh
-pip install bing-image-downloader
-```
-
-or 
 ```bash
-git clone https://github.com/gurugaurav/bing_image_downloader
-cd bing_image_downloader
-pip install .
+
+git clone https:/github.com/tensorflow/models
+
+cd models/research/object_detection/
+
 ```
 
+**Install models directory on to your root project folder**
+
+**OR**
 
 
-### Usage <br />
+```bash
+
+docker-compose up -d build
+
+```
+
+__Training the Dataset using tensorflow__
+
+```bash
+
+python model_main_tf2.py -- \
+  --model_dir=$MODEL_DIR --num_train_steps=$NUM_TRAIN_STEPS \
+  --sample_1_of_n_eval_examples=$SAMPLE_1_OF_N_EVAL_EXAMPLES \
+  --pipeline_config_path=$PIPELINE_CONFIG_PATH \
+  --alsologtostderr
+
+```
+
+__Create Pipeline Config__
+
 ```python
+
+from object_detection.utils import config_util
+
+config_util.get_configs_from_pipeline_file(pipeline_config_path='<dirname>')
+
+```
+
+__Create Dataset of Barrier Images__
+
+```bash
+
+cd bing_image_downloader/
+
+python setup.py install
+
+```
+
+```python
+
 from bing_image_downloader import downloader
 downloader.download(query_string, limit=100,  output_dir='dataset', adult_filter_off=True, force_replace=False, timeout=60)
+
 ```
 
-`query_string` : String to be searched.<br />
-`limit` : (optional, default is 100) Number of images to download.<br />
-`output_dir` : (optional, default is 'dataset') Name of output dir.<br />
-`adult_filter_off` : (optional, default is True) Enable of disable adult filteration.<br />
-`force_replace` : (optional, default is False) Delete folder if present and start a fresh download.<br />
-`timeout` : (optional, default is 60) timeout for connection in seconds.<br />
+#### Download existing MSCOCO Dataset
 
+```bash
 
+cd /home/tensorflow/models/research/object_detection/dataset_tools/ bash ./download_and_preprocess_mscoco.sh /home/tensorflow/output_dir
 
+```
 
+__Image Annotation__
 
-### PyPi <br />
-https://pypi.org/project/bing-image-downloader/
-  
-
-
+**CVAT (Computer Vision Annotation Toolkit) does the Image Annotation on training data. Training data of barrier images consists of some hundreds of images.**
 
