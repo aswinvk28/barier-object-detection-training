@@ -2,3 +2,5 @@ models/
 *.egg-info
 build/
 dist/
+.local
+.cache

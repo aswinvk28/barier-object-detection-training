@@ -72,3 +72,22 @@ __Image Annotation__
 
 **CVAT (Computer Vision Annotation Toolkit) does the Image Annotation on training data. Training data of barrier images consists of some hundreds of images.**
 
+__Model Inference Tests__
+
+```bash
+
+git clone https://github.com/nscalo/pytorch2tensorflow
+cd pytorch2tensorflow
+python3 inception_v3.py
+mv resnet18.onnx inception_v3.onnx
+
+```
+
+__Model Conversion__
+
+```bash
+
+:/opt/intel/openvino/deployment_tools/model_optimizer# python3 mo_onnx.py --input_model /home/project/sample_models/inception_v3.onnx --input_shape [1,3,299,299] --input "data" --output "prob" --data_type FP32 --output_dir /home/project/models
+
+```
+
