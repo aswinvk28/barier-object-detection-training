@@ -91,3 +91,74 @@ __Model Conversion__
 
 ```
 
+__Inference Results__
+
+[ INFO ] Creating Inference Engine
+[ INFO ] Loading network files:
+        /home/project/models/inception_v3/inception_v3.xml
+        /home/project/models/inception_v3/inception_v3.bin
+[ INFO ] Preparing input blobs
+[ WARNING ] Image /home/project/samples/image1.jpg is resized from (675, 900) to (299, 299)
+[ INFO ] Batch size is 1
+[ INFO ] Loading model to the plugin
+[ INFO ] Starting inference in synchronous mode
+[ INFO ] Processing output blob
+[ INFO ] Top 10 results:
+Image /home/project/samples/image1.jpg
+
+classid probability
+------- -----------
+  725     18.9454308
+  110     14.7835197
+  883     14.5714207
+  916     13.1352987
+  447     12.6553574
+  773     12.4970264
+  982     11.1883326
+  979     11.0661860
+  614     9.8136787
+  818     9.0564919
+
+[ INFO ] Creating Inference Engine
+[ INFO ] Loading network files:
+        /home/project/models/inception_v3/inception_v3.xml
+        /home/project/models/inception_v3/inception_v3.bin
+[ INFO ] Preparing input blobs
+[ WARNING ] Image /home/project/samples/image2.jpg is resized from (408, 868) to (299, 299)
+[ INFO ] Batch size is 1
+[ INFO ] Loading model to the plugin
+[ INFO ] Starting inference in synchronous mode
+[ INFO ] Processing output blob
+[ INFO ] Top 10 results:
+Image /home/project/samples/image2.jpg
+
+classid probability
+------- -----------
+  916     26.1904640
+  502     23.3235359
+  110     22.1218090
+  447     21.4066143
+  614     16.5020027
+  725     15.7865076
+  773     15.5626106
+  836     15.5608282
+  659     15.1746807
+  386     14.1328096
+
+**image1.jpg**
+![./images/image1.jpg](./images/image1.jpg)
+
+**image2.jpg**
+![./images/image2.jpg](./images/image2.jpg)
+
+**image3.jpg**
+![./images/image3.jpg](./images/image3.jpg)
+
+**image4.jpg**
+![./images/image4.jpg](./images/image4.jpg)
+
+## **So the classes with top probabilities I get from inferences are:**
+
+## **Sea Anemone, Pirate, Safe, Pinwheel, etc**
+
+## _Training is found to be required_
