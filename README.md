@@ -157,8 +157,11 @@ classid probability
 **image4.jpg**
 ![./images/image4.jpg](./images/image4.jpg)
 
-## **So the classes with top probabilities I get from inferences are:**
+**So the classes with top probabilities I get from inferences are:**
 
-## **Sea Anemone, Pirate, Safe, Pinwheel, etc**
+**Sea Anemone, Pirate, Safe, Pinwheel, etc**
 
-## _Training is found to be required_
+_Training is found to be required_
+
+### Training Pipeline for Object Detection
+
