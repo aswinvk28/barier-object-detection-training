@@ -52,5 +52,9 @@ ENV TF_CPP_MIN_LOG_LEVEL 3
 
 USER root
 
+RUN apt-get install tofrodos unix2dos -y
+
+RUN dos2unix object_detection/dataset_tools/*.sh
+
 ENTRYPOINT ["/bin/bash"]
 
